@@ -1,1 +1,23 @@
 <h1>Hello</h1>
+
+<%= form_for Item.new do |f|%>
+	<div class="form">
+		<%= f.text_field :name, placeholder:
+		"Enter Task"%>
+	</div>
+
+	<div class="form">
+		<%=f.submit%>
+	</div>
+
+<ul>
+
+<% @items.each do |item|%>
+	<li>
+		<%=item.name%> </br>
+		<%=f.check_box :done%>
+		<%=link_to "done", item_path(item), method: 'delete'%>
+	</li>
+<%end%>
+</ul>
+<%end%>

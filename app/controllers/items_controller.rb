@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
 
-	def index
+	def home
 		@items = Item.all
 	end
 
 	def create
-		Item.create(item_params)
+		Item.create
 		redirect_to root_path
 	end
 

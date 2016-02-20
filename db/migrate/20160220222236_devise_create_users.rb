@@ -40,13 +40,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
     # add_index :users, :unlock_token,         unique: true
 
 
-    create_table :items do |t|
-      t.string :name
-      t.boolean :done
-      t.timestamps
-    end
-
-
 
   end
 end
