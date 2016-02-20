@@ -9,15 +9,15 @@
 	<div class="form">
 		<%=f.submit%>
 	</div>
+<%end%>
 
+<br/>
 <ul>
 
 <% @items.each do |item|%>
 	<li>
-		<%=item.name%> </br>
-		<%=f.check_box :done%>
-		<%=link_to "done", item_path(item), method: 'delete'%>
+		<%=item.name%> <br/>
+		<%=link_to "Delete", item_path(item), method: 'delete'%>
 	</li>
-<%end%>
 </ul>
 <%end%>

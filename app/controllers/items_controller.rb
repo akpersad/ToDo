@@ -2,10 +2,11 @@ class ItemsController < ApplicationController
 
 	def home
 		@items = Item.all
+		# binding.pry
 	end
 
 	def create
-		Item.create
+		Item.create(item_params)
 		redirect_to root_path
 	end
 
@@ -13,5 +14,9 @@ class ItemsController < ApplicationController
 		item = Item.find(params[:id])
 		item.destroy
 		redirect_to root_path
+	end
+
+	def item_params
+		params.require(:item).permit(:name, :done)
 	end
 end
