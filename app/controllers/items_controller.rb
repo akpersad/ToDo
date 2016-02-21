@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 		@item = Item.create(item_params)
 
 		respond_to do |format|
-		format.html { redirect_to root_path}
+		format.html {redirect_to root_path}
 		format.js
 		end
 	end
@@ -19,12 +19,12 @@ class ItemsController < ApplicationController
 		@item.destroy
 
 		respond_to do |format|
-		format.html { redirect_to root_path}
+		format.html {redirect_to root_path}
 		format.js
 		end
 	end
 
 	def item_params
-		params.require(:item).permit(:name, :done)
+		params.require(:item).permit(:name)
 	end
 end

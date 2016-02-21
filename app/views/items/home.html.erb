@@ -1,17 +1,11 @@
 <h1>Hello</h1>
 
-<%= form_for Item.new do |f|%>
-	<div class="form">
-		<%= f.text_field :name, placeholder:
-		"Enter Task"%>
-	</div>
-
-	<div class="form">
-		<%=f.submit%>
-	</div>
+<%= form_for Item.new, remote: true do |f|%>
+	<%= f.text_field :name, placeholder: "Enter New Task" %>
+	<%=f.submit "Add"%>
 <%end%>
-
 <br/>
-<ul>
+
+<ul id="item-list">
 	<%=render @items%>
 </ul>
