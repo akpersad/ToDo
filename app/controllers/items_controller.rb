@@ -1,13 +1,22 @@
 class ItemsController < ApplicationController
+	before_filter :authenticate_user!
 
 	def home
-		@items = Item.where(user_id: current_user.id)
+		
+		if user_signed_in?
+			@items = Item.where(user_id: current_user.id)
+		else
+			@items = Item.all
+		end
+		# @items = Item.all
 	end
 
 	def create
 		@item = Item.create(item_params)
 		@item.user_id = current_user.id
-		binding.pry
+		if @item.save
+		end
+		# binding.pry
 
 		respond_to do |format|
 		format.html {redirect_to root_path}
