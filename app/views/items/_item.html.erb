@@ -1,4 +1,4 @@
-<li>
+<li id="task-<%=task.id%>">
 		<%=item.name%> <br/>
-		<%=link_to "Delete", item_path(item), method: 'delete'%>
+		<%=link_to "delete", item_path(item), method: 'delete', remote: true%>
 </li>
