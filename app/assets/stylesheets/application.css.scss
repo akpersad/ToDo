@@ -35,7 +35,12 @@ body {
   margin: 5px 0;
 }
 
-li {
+ul#todo_list {
+	border-style: solid;
+	padding: 10px;
+}
+
+li.todos {
 	border-style: solid;
 	padding: 10px;
 }
