@@ -1,12 +1,13 @@
 class ItemsController < ApplicationController
 
 	def home
-		@items = Item.all
-		# binding.pry
+		@items = Item.where(user_id: current_user.id)
 	end
 
 	def create
 		@item = Item.create(item_params)
+		@item.user_id = current_user.id
+		binding.pry
 
 		respond_to do |format|
 		format.html {redirect_to root_path}
