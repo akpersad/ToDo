@@ -13,11 +13,5 @@
 
 <br/>
 <ul>
-
-<% @items.each do |item|%>
-	<li>
-		<%=item.name%> <br/>
-		<%=link_to "Delete", item_path(item), method: 'delete'%>
-	</li>
+	<%=render @items%>
 </ul>
-<%end%>

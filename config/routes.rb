@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'items#home'
-  resources :items
+  resources :items, only: [:home, :create, :destroy]
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
