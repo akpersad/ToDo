@@ -20,28 +20,100 @@
  */
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
+
+//colors
+$color_cioccolato_approx: #592610;
+$color_pink_swan_approx: #bbb;
+$white: white;
+$black: #000;
+$color_gallery_approx: #eeeeee;
+$color_mine_shaft_approx: #333333;
+$color_celeste_approx: #cccccc;
+
+//fonts
+$font_0: Arial;
+
+//urls
+$url_0: url(http://i.imgur.com/fwlU3Os.jpg);
+
 body {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  text-align: center;
+	padding-bottom: 30px;
+	text-align: center;
+	background: $url_0 no-repeat center center fixed;
+	background-size: cover;
+	color: $color_cioccolato_approx;
 }
-
+ul {
+	&#todo_list {
+		border-style: double;
+		list-style-type: none;
+		width: 65%;
+		margin: auto;
+		padding-right: 41px;
+		padding-left: 41px;
+	}
+	&.nav_bar {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: $color_cioccolato_approx;
+	}
+}
+li {
+	&.todos {
+		padding-top: 10px;
+		font-size: 150%;
+	}
+	&.nav {
+		float: left;
+		border-right: 1px solid $color_pink_swan_approx;
+		display: block;
+		color: $white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		&:last-child {
+			border-right: none;
+		}
+	}
+}
+hr {
+	margin-bottom: 0;
+	margin-top: 10px;
+	border-color: $color_cioccolato_approx;
+	background-color: $color_cioccolato_approx;
+}
+a {
+	color: $white;
+	text-shadow: -1px -1px 0 $black, 1px -1px 0 $black, -1px 1px 0 $black, 1px 1px 0 $black;
+}
+.signup {
+	border-style: double;
+	width: 33%;
+	margin: auto;
+	margin-top: 8%;
+}
+#test {
+	font: bold 11px $font_0;
+	text-decoration: none;
+	background-color: $color_gallery_approx;
+	color: $color_mine_shaft_approx;
+	padding: 5px 6px;
+	border-top: 1px solid $color_celeste_approx;
+	border-right: 1px solid $color_mine_shaft_approx;
+	border-bottom: 1px solid $color_mine_shaft_approx;
+	border-left: 1px solid $color_celeste_approx;
+	width: 64px;
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
 .theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
+	position: static;
+	display: block;
+	margin-bottom: 20px;
 }
-
 .theme-showcase > p > .btn {
-  margin: 5px 0;
-}
-
-ul#todo_list {
-	border-style: solid;
-	padding: 10px;
-}
-
-li.todos {
-	border-style: solid;
-	padding: 10px;
+	margin: 5px 0;
 }

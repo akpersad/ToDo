@@ -1,11 +1,23 @@
-<div id="user_nav">
-	<% if user_signed_in?%>
-		Welcome <%=current_user.first_name%>!
-		<%= link_to "Sign Out", destroy_user_session_path, :method => :delete%>
-	<%else%>
-		<%=link_to "Sign Up", new_user_registration_path%> or <%=link_to "sign in", new_user_session_path%>
-	<%end%>
-</div>
+<div class="main">
+<ul class="nav_bar">
+  <li class="nav">To-Do App</li>
+  <ul style="float:right;list-style-type:none;">
+    
+  <li class="nav">
+  	
+	<div id="user_nav">
+		<% if user_signed_in?%>
+			Welcome <%=current_user.first_name%>! &nbsp; | &nbsp;
+			<%= link_to "Sign Out", destroy_user_session_path, :method => :delete%>
+		<%else%>
+			<%=link_to "Sign Up", new_user_registration_path%> or <%=link_to "Sign In", new_user_session_path%>
+		<%end%>
+	</div>
+
+  </li>
+  </ul>
+</ul>
+
 
 <%if user_signed_in?%>
 	<h1><%=current_user.first_name%>'s Tasks</h1>
@@ -22,3 +34,4 @@
 <ul id="todo_list">
 	<%=render @items%>
 </ul>
+</div>
