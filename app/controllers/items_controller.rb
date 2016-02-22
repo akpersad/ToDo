@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-	# before_filter :authenticate_user!
 
 	def home
 
@@ -8,7 +7,6 @@ class ItemsController < ApplicationController
 		else
 			@items = Item.where(user_id:0)
 		end
-		# binding.pry
 	end
 
 	def create
