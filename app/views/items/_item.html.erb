@@ -1,5 +1,4 @@
 <li class= "todos" id="item_<%=item.id%>">
 		<%=item.name%>  |  Created At: <%=item.created_at.strftime("%I:%M%p UTC on %a, %m/%d/%y")%>  
-		<%= check_box_tag "Done", item_path(item), method: "delete", remote: true%>
-		<%= link_to "delete", item_path(item), method: 'delete', remote: true%>
+		<%= link_to "Done", item_path(item), method: 'delete', remote: true%>
 </li>
