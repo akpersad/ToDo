@@ -7,7 +7,11 @@
 	<%end%>
 </div>
 
-<h1>Hello</h1>
+<%if user_signed_in?%>
+	<h1><%=current_user.email%>'s Tasks</h1>
+<%else%>
+	<h1>Global Tasks</h1>
+<%end%>
 
 <%= form_for Item.new, remote: true do |f|%>
 	<%= f.text_field :name, placeholder: "Enter New Task" %>
